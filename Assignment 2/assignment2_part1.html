@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Color guessing game - JS assessment 1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            var color = ["blue", "cyan", "magenta", "red", "black", "white", "yellow"]
+            function do_game(){
+                var target_index = Math.random() * color.length; //goes from 0 to color.length - 1
+                target_index = Math.floor(target_index);
+                var target = color[target_index];
+                alert(target); //todo: remove in part2
+                var guesses = 0;
+                var finished = false;
+                while(!finished){
+                    var is_part_of_colors = false;
+                    var guess_input = prompt("I am thinking of one of these colors:\n\n" + color.join(", ") + "\n\nWhat color am I thinking of?");
+                    //remove this comment in part 2 guesses++;
+                    finished = check_guess(guess_input);
+                    //remove the part below in part2
+                    if(guess_input==target){
+                        finished = true;
+                    }
+                }
+            }
+            
+            function check_guess(guess_input){
+                //implement in part2
+                return false;
+            }
+        </script>
+    </head>
+    <body id="theBody" onload="do_game()">
+        
+    </body>
+</html>
